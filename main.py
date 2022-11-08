@@ -61,5 +61,16 @@ while game_is_on:
         else:
             pass
 
+    # If paddle misses the paddle, the ball should restart from the center position again, giving opposite player score
+    if ball.xcor() > 390:
+        # Add a score class
+        ball.reset_position()
+
+
+    if ball.xcor() < -390:
+        # Add a score class here
+        ball.reset_position()
+
+
 
 screen.exitonclick()
