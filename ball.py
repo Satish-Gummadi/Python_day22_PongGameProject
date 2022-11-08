@@ -16,3 +16,9 @@ class Ball(Turtle):
         self.left(90)
         self.forward(10)
         self.right(90)
+
+    def bounce_right(self):
+        self.right(90)
+
+    def bounce_left(self):
+        self.left(90)

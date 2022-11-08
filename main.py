@@ -39,6 +39,17 @@ while game_is_on:
     screen.update()
     time.sleep(0.07)
     ball.move()
-
+    print(ball.heading())
+    # Detect collision with wall
+    if ball.ycor() > 280 and ball.heading() == 0:
+        ball.bounce_right()
+    elif ball.ycor() > 280 and ball.heading() == 90:
+        ball.bounce_left()
+    elif ball.ycor() < -280 and ball.heading() == 180:
+        ball.bounce_right()
+    elif ball.ycor() < -280 and ball.heading() == 270:
+        ball.bounce_left()
+    else:
+        pass
 
 screen.exitonclick()
