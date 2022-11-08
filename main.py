@@ -39,9 +39,8 @@ game_is_on = True
 
 while game_is_on:
     screen.update()
-    time.sleep(0.07)
+    time.sleep(ball.move_speed)
     ball.move()
-
 
     # Detect collision with wall and bounce
     if ball.ycor() > 280 and ball.heading() == 0:
@@ -59,8 +58,10 @@ while game_is_on:
     if ball.distance(r_paddle) < 50 and ball.xcor() > 330 or ball.distance(l_paddle) < 50 and ball.xcor() < -330:
         if ball.heading() == 270 or ball.heading() == 90:
             ball.bounce_right()
+            ball.speed_up()
         elif ball.heading() == 0 or ball.heading() == 180:
             ball.bounce_left()
+            ball.speed_up()
         else:
             pass
 
